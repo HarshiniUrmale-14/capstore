@@ -1,0 +1,24 @@
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>HISTORY ID</th>
+                <th> ORDER ID</th>
+                <th>EMAIL</th>
+                <th>PRODUCT ID</th>
+                <th>TOTAL BILL</th>
+                <th>PAYMENT MODE</th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let cancelledlist of cancelledOrderArray'>
+                <td>{{cancelledlist.historyId}}</td>
+                <td>{{cancelledlist.orderId}}</td>
+                <td>{{cancelledlist.email}}</td>
+                <td>{{cancelledlist.productid}}</td>
+                <td>{{cancelledlist.totalBill}}</td>
+                <td>{{cancelledlist.paymentMode}}</td>
+            </tr>
+    </table>
+</div>
+
+

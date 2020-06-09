@@ -1,0 +1,26 @@
+<h4 style="color:red;" *ngIf='delete'>{{delete.description}}</h4>
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>EMAIL</th>
+                <th>MERCHANT NAME</th>
+                <th>BRAND NAME</th>
+                <th>ADDRESS</th>
+                <th>PHONE NUMBER</th>
+                <th>ROLE</th>
+                <th></th>
+                <tr>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let verifiedMerchant of merchantListArray'>
+                <td>{{verifiedMerchant.email}}</td>
+                <td>{{verifiedMerchant.name}}</td>
+                <td>{{verifiedMerchant.brandName}}</td>
+                <td>{{verifiedMerchant.address}}</td>
+                <td>{{verifiedMerchant.phoneNumber}}</td>
+                <td>{{verifiedMerchant.role}}</td>
+                <td><button style="height:30px;width:270px;" class="btn btn-outline-dark" (click)="deleteMerchant(verifiedMerchant)">DELETE</button></td>
+            </tr>
+    </table>
+</div>

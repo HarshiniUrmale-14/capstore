@@ -1,0 +1,25 @@
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>MESSAGE ID</th>
+                <th>NAME</th>
+                <th>EMAIL </th>
+                <th>BRANDNAME</th>
+                <th>RATING</th>
+                <th>FEEDBACK</th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let feedbacklist of feedbackArray'>
+                <td>{{feedbacklist.messageId}}</td>
+                <td>{{feedbacklist.name}}</td>
+                <td>{{feedbacklist.email}}</td>
+                <td>{{feedbacklist.brandname}}</td>
+                <td>{{feedbacklist.rating}}</td>
+                <td>{{feedbacklist.feedback}}</td>
+            </tr>
+    </table>
+</div>
+
+
+

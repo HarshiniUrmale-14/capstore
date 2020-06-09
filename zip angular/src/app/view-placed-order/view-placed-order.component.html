@@ -1,0 +1,28 @@
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>ORDER ID</th>
+                <th>PRODUCT ID</th>
+                <th>EMAIL</th>
+                <th>ADDRESS</th>
+                <th>PINCODE</th>
+                <th>PHONE NUMBER</th>
+                <th>PRODUCT QUANTITY</th>
+                <th>TOTAL BILL</th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let order of placedOrderArray'>
+                <td>{{order.orderId}}</td>
+                <td>{{order.productId}}</td>
+                <td>{{order.email}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.pincode}}</td>
+                <td>{{order.phoneNumber}}</td>
+                <td>{{order.productQuantity}}</td>
+                <td>{{order.totalBill}}</td>
+            </tr>
+    </table>
+</div>
+
+

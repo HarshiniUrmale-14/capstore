@@ -1,0 +1,25 @@
+<h4 style="color:green;" *ngIf='customerVerify'>{{customerVerify.description}}</h4>
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>EMAIL</th>
+                <th>NAME</th>
+                <th>PASSWORD</th>
+                <th>PHONE NUMBER</th>
+                <th></th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let customerList of customerListVerifyArray'>
+                <td>{{customerList.email}}</td>
+                <td>{{customerList.name}}</td>
+                <td>{{customerList.password}}</td>
+                <td>{{customerList.phoneNumber}}</td>
+                <td><button class="btn btn-outline-primary"  [disabled]="clicked"  (click)="VerifyCustomerList(customerList)"clicked = true;>VERIFY </button></td>
+            </tr>
+    </table>
+</div>
+<div class="col-md-11  text-center">
+    <a href="/CustomerList" class="btn btn-outline-dark  ">CUSTOMER LIST</a>
+</div>
+

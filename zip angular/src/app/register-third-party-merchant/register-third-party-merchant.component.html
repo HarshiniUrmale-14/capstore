@@ -1,0 +1,106 @@
+<div class="col-md-5 float-right mt-2">
+    <form #registerForm='ngForm' (ngSubmit)='submit(registerForm)'
+        style="padding-top: 50px; padding-bottom: 50px;">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <div>
+                    <h4> THIRD PARTY MERCHANT REGISTER HERE!!!!</h4>
+                </div>
+            </div>
+            <h4 style="color: red;" *ngIf="notValid">{{notValid}}</h4>
+            <h4 style="color: green;" *ngIf="valid">{{valid}}</h4>
+            <div class="card-body col-md-12">
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label for="name">MERCHANT NAME</label>
+                        <input type="text" name="name" required class="form-control"
+                            #name='ngModel' ngModel placeholder="enter merchant name" class="form-control mb-3"
+                            pattern="^[a-z A-Z]{3,40}">
+                        <div *ngIf='name.touched && name.invalid'>
+                            <p class="alert alert-danger" *ngIf='name.errors.required'>
+                                field is mandatory
+                            </p>
+                            <p class="alert alert-danger" *ngIf='name.errors.pattern'>
+                                Input should be characters only, atleast 3 and atmost 40 characters required
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">EMAIL ID</label>
+                        <input type="email" name="email" required class="form-control" #email='ngModel' ngModel email
+                            placeholder="enter email id" class="form-control mb-3">
+                        <div *ngIf='email.touched && email.invalid'>
+                            <p class="alert alert-danger" *ngIf='email.errors.required'>
+                                Input field is mandatory
+                            </p>
+                            <p class="alert alert-danger" *ngIf='email.errors.email'>
+                                Input should be email only of type
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">MOBILE NO</label>
+                        <input type="text" name="phoneNumber" required class="form-control" #phoneNumber='ngModel' ngModel
+                            placeholder="enter phone no" class="form-control mb-3" pattern="^[6-9]\d{9}">
+                        <div *ngIf='phoneNumber.touched && phoneNumber.invalid'>
+                            <p class="alert alert-danger" *ngIf='phoneNumber.errors.required'>
+                               This field is mandatory
+                            </p>
+                            <p class="alert alert-danger" *ngIf='phoneNumber.errors.pattern'>
+                                Enter valid mobile number
+                            </p>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-md-6 float-left">
+                    <div class="form-group">
+                        <label for="brandName">BRAND NAME</label>
+                        <input type="text" name="brandName" class="form-control " #brandName="ngModel" ngModel
+                        placeholder="enter brand name" pattern="^[a-z A-Z]{3,10}"  required>
+                        <div *ngIf='brandName.touched && brandName.invalid' >
+                            <p class="alert alert-danger" *ngIf='brandName.errors.required'>
+                               This field is mandatory
+                            </p>
+                            <p class="alert alert-danger" *ngIf='brandName.errors.pattern'>
+                                Atleast 3 or atmost 10 letters required
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">ADDRESS</label>
+                        <input type="text" name="address" class="form-control " #address="ngModel" ngModel required
+                        placeholder="enter address"  pattern="(?=.*[a-zA-Z]).{5,20}">
+                        <div *ngIf='address.touched && address.invalid'>
+                            <p class="alert alert-danger" *ngIf='address.errors.required'> field is
+                                mandatory</p>
+                            <p class="alert alert-danger" *ngIf='address.errors.pattern'> only
+                                minlength 5 and maxlength 20 character only</p>
+                        </div>
+                    </div>
+                   
+                     <div class="form-group">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" required class="form-control" #password='ngModel' ngModel
+                            placeholder="enter password" class="form-control mb-3"
+                            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{8,15}$">
+                        <div *ngIf='password.touched && password.invalid'>
+                            <p class="alert alert-danger" *ngIf='password.errors.required'>
+                                field is mandatory
+                            </p>
+                            <p class="alert alert-danger" *ngIf='password.errors.pattern'>
+                                enter 8 to 15 length password having altleast one capital letter ,one small letter,
+                                 one digit and no space
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer bg-light">
+                <button class="btn btn-outline-primary float-right"[disabled]='registerForm.invalid'
+                    type='submit'>REGISTER</button>
+                <button class="btn btn-dark " type='reset'>RESET</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>ID</th>
+                <th>EMAIL</th>
+                <th>CUSTOMER NAME</th>
+                <th>PHONE NUMBER</th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let verifiedCustomer of customerListArray'>
+                <td>{{verifiedCustomer.id}}</td>
+                <td>{{verifiedCustomer.email}}</td>
+                <td>{{verifiedCustomer.name}}</td>
+                <td>{{verifiedCustomer.phoneNumber}}</td>
+            </tr>
+    </table>
+</div>
+

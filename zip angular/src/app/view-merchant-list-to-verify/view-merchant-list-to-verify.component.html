@@ -1,0 +1,29 @@
+<h4 style="color:green;" *ngIf='merchantVerify'>{{merchantVerify.description}}</h4>
+<div class="container card card-body mt-4 ">
+    <table class="table table-bordered table-hover ">
+        <thead class="bg-dark text-white">
+            <tr >
+                <th>EMAIL</th>
+                <th>MERCHANT NAME</th>
+                <th>BRAND NAME</th>
+                <th>ADDRESS</th>
+                <th>PHONE NUMBER</th>
+                <th>PASSWORD</th>
+                <th></th>
+            </thead>
+        <tbody class="text-dark">
+            <tr *ngFor='let merchant of merchantListVerifyArray'>
+                <td>{{merchant.email}}</td>
+                <td>{{merchant.name}}</td>
+                <td>{{merchant.brandName}}</td>
+                <td>{{merchant.address}}</td>
+                <td>{{merchant.phoneNumber}}</td>
+                <td>{{merchant.password}}</td>
+                <td><button  class="btn btn-outline-primary"  [disabled]="clicked" 
+                    (click)="VerifyMerchantList(merchant)"clicked = true;>VERIFY</button></td>
+            </tr>
+    </table>
+</div>
+<div class="col-md-11  text-center">
+    <a href="/merchantList" class="btn btn-outline-dark " >MERCHANT LIST</a>
+</div>
